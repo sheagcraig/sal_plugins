@@ -45,11 +45,11 @@ class OneDriveVersion(IPlugin):
                                     .annotate(count=Count("version")) \
                                     .order_by("version")
 
-        c = Context({
+        c = {
             "title": self.get_description(),
             "data": data,
             "theid": theid,
-            "page": page})
+            "page": page}
 
         return t.render(c)
 
